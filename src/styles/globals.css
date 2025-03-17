@@ -19,8 +19,32 @@
   }
 }
 
+html {
+  font-family: "Baloo 2", sans-serif;
+}
+
 body {
-  background: var(--background);
+  /* Default background for larger screens */
+  /* background: linear-gradient(81.63deg, #ff7f3e 0.74%, #7f00ff 95.62%); */
+  /* background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; */
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Mobile-specific changes */
+/* @media (max-width: 640px) {
+  body {
+    height: 100vh;
+    background: linear-gradient(
+      360.63deg,
+      #ff7f3e 0.74%,
+      #7f00ff 95.62%
+    ) !important;
+    background: blue;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+} */
