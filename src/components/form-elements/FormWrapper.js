@@ -42,7 +42,7 @@ By proceeding further, you agree to our <a href="#" className="underline">Terms
       </div>
 
       <div className="col-span-3">
-        <h2 className="text-2xl sm:text-4xl font-bold pb-4">{pointerTitle}</h2>
+        <h2 className="text-[44px] sm:text-[44px] font-bold pb-4">{pointerTitle}</h2>
         {pointersData?.map((item, index) => (
           <div key={index} className="flex gap-2 mb-4">
             <div className="flex-shrink-0 mt-1 sm:mt-2">
