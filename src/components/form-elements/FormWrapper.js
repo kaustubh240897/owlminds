@@ -9,7 +9,7 @@ export default function FormWrapper({
   secondryNote2,
 }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-5  gap-x-0 gap-y-8 sm:gap-8 mx-6 my-6 sm:my-0 sm:mx-0">
+    <div className="grid grid-cols-1 sm:grid-cols-5  gap-x-0 gap-y-8 sm:gap-6 mx-6 my-6 sm:my-0 sm:mx-0">
       <div className="bg-white col-span-2 pt-12 pb-8  px-6 rounded-lg">
         <div className="relative mb-6">
           <div className="w-full bg-gray-200 rounded-full h-2">
@@ -41,7 +41,7 @@ By proceeding further, you agree to our <a href="#" className="underline">Terms
         
       </div>
 
-      <div className="col-span-3">
+      <div className="col-span-3 ml-[20px]">
         <h2 className="text-[44px] sm:text-[44px] font-bold pb-4">{pointerTitle}</h2>
         {pointersData?.map((item, index) => (
           <div key={index} className="flex gap-2 mb-4">
