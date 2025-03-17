@@ -35,30 +35,32 @@ const validationSchemaStep1 = Yup.object({
 export default function Home() {
   const [step, setStep] = useState(1);
   const [showModal, setShowModal] = useState(false);
+  
+  // Use the dynamic validation schema based on current step
   const {
     control,
     handleSubmit,
     formState: { errors },
     setValue,
     trigger,
+    reset,
   } = useForm({
-    resolver: yupResolver(validationSchemaStep1),
+    resolver: yupResolver(
+      step === 1 
+        ? validationSchemaStep1 
+        : step === 2 
+        ? validationSchemaStep2 
+        : validationSchemaStep3
+    ),
+    mode: "onChange"
   });
 
   const handleNextStep = async () => {
     const isValid = await trigger();
     if (isValid) {
+      // Reset form errors when moving to next step
+      reset({}, { keepValues: true });
       setStep(step + 1);
-      if (step === 1) {
-        setValue("firstName", "");
-        setValue("lastName", "");
-      } else if (step === 2) {
-        setValue("email", "");
-        setValue("phone", "");
-      } else if (step === 3) {
-        setValue("address", "");
-        setValue("city", "");
-      }
     }
   };
 
@@ -92,9 +94,9 @@ export default function Home() {
         "Start your Child's Journey to Becoming a CREATOR for Life!"
       }
       page={step}
-      note="We’ll send the class link and details via email and WhatsApp"
+      note="We'll send the class link and details via email and WhatsApp"
       secondryNote1="Laptop or desktop is compulsory for this class."
-      secondryNote2="By proceeding further, you agree to our Terms & Conditions and our Privacy Policy."
+      secondryNote2="By proceeding further, you agree to our Terms & Conditions and our Privacy Policy."
       getProgress={getProgress}
     >
       <form onSubmit={handleSubmit(handleNextStep)}>
@@ -194,31 +196,6 @@ export default function Home() {
       </form>
     </FormWrapper>
   );
-
-  // Switch validation schema based on the step
-  const setValidationSchema = () => {
-    switch (step) {
-      case 1:
-        return validationSchemaStep1;
-      case 2:
-        return validationSchemaStep2;
-      case 3:
-        return validationSchemaStep3;
-      default:
-        return validationSchemaStep1;
-    }
-  };
-
-  // Update the resolver dynamically for each step
-  const {
-    control: newControl,
-    handleSubmit: newHandleSubmit,
-    formState: newFormState,
-    setValue: newSetValue,
-    trigger: newTrigger,
-  } = useForm({
-    resolver: yupResolver(setValidationSchema()),
-  });
 
   const currentForm = () => {
     switch (step) {
