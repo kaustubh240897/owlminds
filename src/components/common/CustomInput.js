@@ -28,7 +28,7 @@ export default function CustomInput({
                 international
                 countryCallingCodeEditable={false}
                 defaultCountry="IN"
-                placeholderText="Enter your mobile number"
+                placeholder="Enter your mobile number"
                 className={`border-[2px] ${
                   error ? "border-red-500" : "border-gray-200"
                 } py-3 px-2 text-xs rounded-lg text-black focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500 [&_input]:outline-none [&_input]:border-0 [&_input]:ring-0 [&_input:focus]:outline-none [&_input:focus]:border-0 [&_input:focus]:ring-0`}
