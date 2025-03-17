@@ -11,7 +11,7 @@ export default function CustomNumberInput({
 }) {
   return (
     <div className="flex flex-col pb-6">
-      <label className="text-black pb-1 text-xs font-sans">{label}</label>
+      <label className="text-black pb-1 text-xs font-semibold">{label}</label>
       <Controller
         name={name}
         control={control}
@@ -52,7 +52,7 @@ function NumberInput({ onChange, value, data }) {
               <div
                 className={`${
                   item.value === value ? "text-white" : "text-black"
-                } text-xs font-semibold`}
+                } text-md font-sans`}
               >
                 {item.value}
               </div>

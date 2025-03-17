@@ -132,7 +132,7 @@ export default function Home() {
       <form onSubmit={handleSubmit(handleNextStep)}>
         <CustomNumberInput
           data={selectDateData}
-          label="Select Child's Grade"
+          label="Select date"
           name="selectDate"
           control={control}
           error={errors.selectDate?.message}
