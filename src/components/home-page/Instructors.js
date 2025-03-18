@@ -20,10 +20,10 @@ export default function Instructors() {
         {instructors.map((instructor) => (
           <div
             key={instructor.id}
-            className="bg-white rounded-lg shadow-md overflow-hidden"
+            className="bg-white rounded-lg overflow-hidden"
           >
             {/* Image container with fixed aspect ratio */}
-            <div className="relative h-0 pb-[100%]">
+            <div className="relative h-0 pb-[100%] rounded-[30px] overflow-hidden">
               <Image
                 src={instructor.image}
                 alt={instructor.name}
