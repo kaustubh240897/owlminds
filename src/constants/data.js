@@ -1,3 +1,7 @@
+import teamCard1 from '../assets/images/team_card1.png';
+import teamCard2 from '../assets/images/team_card2.png';
+import teamCard3 from '../assets/images/team_card3.png';
+
 export const childGradeData = [
   {
     id: "1",
@@ -172,3 +176,26 @@ export const faqData = [
       answer: "Our comprehensive fitness programs, expert trainers, and supportive community will help you achieve your fitness goals, improve your health, and boost your confidence."
   }
 ]; 
+
+
+export const instructors = [
+  {
+      id: 1,
+      name: "Dr. Farida Khan",
+      image: teamCard1,
+      bio: "PHD IITB, Gold Medalist"
+  },
+  {
+      id: 2,
+      name: "Jane Smith",
+      image: teamCard2,
+      bio: "PHD IITB, Gold Medalist"
+  },
+  {
+      id: 3,
+      name: "John Doe",
+      image: teamCard3,
+      bio: "PHD IITB, Gold Medalist"
+  },
+  // Add more instructors as needed
+];
