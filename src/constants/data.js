@@ -144,3 +144,31 @@ export const slotData = [
     value: "6PM",
   },
 ];
+
+export const faqData = [
+  {
+      id: "01",
+      question: "What does a membership include?",
+      answer: "Our membership includes access to all facilities, unlimited group classes, personalized training programs, and exclusive member events."
+  },
+  {
+      id: "02",
+      question: "Is the membership for me?",
+      answer: "Our membership is perfect for anyone looking to improve their fitness, whether you're a beginner or an experienced athlete. We offer programs suitable for all fitness levels."
+  },
+  {
+      id: "03",
+      question: "How much does a membership cost?",
+      answer: "We offer various membership plans starting from $49/month. Contact us for detailed pricing and current promotions."
+  },
+  {
+      id: "04",
+      question: "What is the cancellation policy?",
+      answer: "Members can cancel their membership with a 30-day notice. There are no cancellation fees for memberships held longer than 6 months."
+  },
+  {
+      id: "05",
+      question: "How will it help me?",
+      answer: "Our comprehensive fitness programs, expert trainers, and supportive community will help you achieve your fitness goals, improve your health, and boost your confidence."
+  }
+]; 
