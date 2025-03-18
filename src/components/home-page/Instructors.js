@@ -3,16 +3,16 @@ import React from "react";
 import { instructors } from "../../constants/data";
 import Image from "next/image";
 
-import imageTest from "@/assets/images/team_card2.png";
+import imageTest from "@/assets/images/instructor_img.png";
 export default function Instructors() {
   // Sample instructor data - you can expand this or fetch from an API
 
   return (
-    <div className="max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto py-8 px-2">
-      <p className="text-center md:text-left text-black text-[24px] font-medium">
+    <div className="max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto py-8 px-4 sm:px-2">
+      <p className="text-center md:text-left text-black text-base sm:text-[24px]">
         Key Persons
       </p>
-      <h2 className="text-2xl md:text-4xl lg:text-[54px] font-bold mb-4 md:mb-8 text-center md:text-left text-black">
+      <h2 className="text-3xl md:text-4xl lg:text-[54px] font-medium mb-4 md:mb-8 text-center md:text-left text-black">
         Expert Instructors
       </h2>
 
@@ -28,6 +28,12 @@ export default function Instructors() {
                 src={instructor.image}
                 alt={instructor.name}
                 className="absolute h-full w-full object-cover"
+              />
+              <Image
+                src={imageTest}
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                height={250}
+                width={250}
               />
             </div>
 

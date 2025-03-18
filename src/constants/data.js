@@ -203,3 +203,54 @@ export const instructors = [
   },
   // Add more instructors as needed
 ];
+
+export const whatOfferList = [
+  {
+    id: "0",
+    title: "Fundamentals",
+    imageDesc:
+      "Fundamentals Building lays the foundation for strong cognitive and leadership skills. It nurtures reasoning ability and emotional intelligence, helping children develop organizing skills and self-confidence in expression. ",
+  },
+  {
+    id: "1",
+    title: "Practicing",
+    imageDesc:
+      "Fundamentals Building lays the foundation for strong cognitive and leadership skills. It nurtures reasoning ability and emotional intelligence, helping children develop organizing skills and self-confidence in expression. ",
+  },
+  {
+    id: "2",
+    title: "Applying",
+    imageDesc:
+      "Fundamentals Building lays the foundation for strong cognitive and leadership skills. It nurtures reasoning ability and emotional intelligence, helping children develop organizing skills and self-confidence in expression. ",
+  },
+  {
+    id: "3",
+    title: "Analyzing",
+    imageDesc:
+      "Fundamentals Building lays the foundation for strong cognitive and leadership skills. It nurtures reasoning ability and emotional intelligence, helping children develop organizing skills and self-confidence in expression. ",
+  },
+  {
+    id: "4",
+    title: "Evaluating",
+    imageDesc:
+      "Fundamentals Building lays the foundation for strong cognitive and leadership skills. It nurtures reasoning ability and emotional intelligence, helping children develop organizing skills and self-confidence in expression. ",
+  },
+  {
+    id: "5",
+    title: "Synthesizing",
+    imageDesc:
+      "Fundamentals Building lays the foundation for strong cognitive and leadership skills. It nurtures reasoning ability and emotional intelligence, helping children develop organizing skills and self-confidence in expression. ",
+  },
+  {
+    id: "6",
+    title: "Iterating",
+    imageDesc:
+      "Fundamentals Building lays the foundation for strong cognitive and leadership skills. It nurtures reasoning ability and emotional intelligence, helping children develop organizing skills and self-confidence in expression. ",
+  },
+  {
+    id: "7",
+    title: "Innovating",
+    imageDesc:
+      "Fundamentals Building lays the foundation for strong cognitive and leadership skills. It nurtures reasoning ability and emotional intelligence, helping children develop organizing skills and self-confidence in expression. ",
+  },
+];

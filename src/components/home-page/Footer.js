@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="sm:mt-24 relative z-50 px-7.5 py-2.5 text-white flex flex-col items-center md:items-start md:flex-row md:justify-between bg-transparent md:bg-transparent">
+      <div className="mt-2 sm:mt-24 relative z-50 px-7.5 py-2.5 text-white flex flex-col items-center md:items-start md:flex-row md:justify-between bg-transparent md:bg-transparent">
         <div className="text-center md:text-left">
           <p className="text-white text-sm md:text-lg mb-2 md:mb-0 flex flex-wrap justify-center md:justify-start">
             <a href="/terms" className="mr-2 no-underline">

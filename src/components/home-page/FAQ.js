@@ -10,10 +10,10 @@ export default function FAQ() {
 
   return (
     <div
-      className="max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto py-8 px-4"
+      className="max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto py-8 px-4 sm:px-2"
       style={{ marginBottom: "30px" }}
     >
-      <h1 className="text-2xl md:text-4xl lg:text-[54px] font-bold mb-4 md:mb-8 text-center text-black">
+      <h1 className="text-2xl md:text-4xl lg:text-[54px] font-medium mb-4 md:mb-8 text-center text-black">
         Frequently Asked Questions
       </h1>
       <div className="space-y-4">
