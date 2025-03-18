@@ -1,6 +1,7 @@
-
-
-export default function Navbar(){
-
-    return(<div><h2 className="text-violet-700">Navbar</h2></div>)
+export default function Navbar() {
+  return (
+    <div>
+      <h2 className="text-primary">Navbar</h2>
+    </div>
+  );
 }
