@@ -1,6 +1,15 @@
 import Link from "next/link";
-
+import Navbar from "../components/home-page/Navbar";
+import Footer from "@/components/home-page/Footer";
 export default function Home(){
 
-    return(<Link href="/"><div><h2 className="text-violet-700">Home page</h2></div></Link>)
+    return(
+    <div>
+        <Navbar/>
+        <div className="flex flex-col items-center justify-center h-screen">
+            <h1 className="text-4xl font-bold">Welcome to the Home Page</h1>
+        </div>
+        <Footer />
+    </div>
+    )
 }
