@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
@@ -21,7 +21,11 @@ import ForwardArrowIcon, { ChevronIcon } from "@/assets/icons/ForwardArrowIcon";
 export default function WhatWeOffer() {
   const [backgroundImage, setBackgroundImage] = useState(weOfferImage);
   const [activeIndex, setActiveIndex] = useState(1);
+  const [isComponentInView, setIsComponentInView] = useState(false);
+  const [isLastSlide, setIsLastSlide] = useState(false);
   const swiperRef = useRef(null);
+  const componentRef = useRef(null);
+  let slideTimeout = null;
 
   const imageMapping = {
     0: weOfferImage,
@@ -34,14 +38,103 @@ export default function WhatWeOffer() {
     7: weOfferImage,
   };
 
+  useEffect(() => {
+    let isScrolling = false;
+    let lastScrollTime = Date.now();
+    const scrollDebounceTime = 300; // Increased from 200 to 300ms for slower response
+    const scrollAmount = 20; // Reduced from 50 to 30px for slower scrolling
+    const scrollDuration = 800; // Increased scroll animation duration
+
+    const handleScroll = (e) => {
+      const now = Date.now();
+      if (window.innerWidth < 640 || isScrolling || (now - lastScrollTime) < scrollDebounceTime) return;
+
+      if (isComponentInView) {
+        const delta = Math.sign(e.deltaY);
+        isScrolling = true;
+        lastScrollTime = now;
+
+        // Scroll up
+        if (delta < 0) {
+          if (activeIndex > 0) {
+            e.preventDefault();
+            window.scrollBy({
+              top: -scrollAmount,
+              behavior: 'smooth',
+              duration: scrollDuration // Added custom duration
+            });
+            swiperRef.current.swiper.slidePrev();
+          }
+        }
+        // Scroll down
+        else if (delta > 0) {
+          if (isLastSlide) {
+            e.preventDefault();
+            window.scrollBy({
+              top: scrollAmount,
+              behavior: 'smooth',
+              duration: scrollDuration // Added custom duration
+            });
+          } else {
+            e.preventDefault();
+            if (activeIndex < whatOfferList.length - 1) {
+              window.scrollBy({
+                top: scrollAmount,
+                behavior: 'smooth',
+                duration: scrollDuration // Added custom duration
+              });
+              swiperRef.current.swiper.slideNext();
+            } else {
+              setIsLastSlide(true);
+            }
+          }
+        }
+
+        // Reset the flag after a short delay
+        setTimeout(() => {
+          isScrolling = false;
+        }, scrollDebounceTime);
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsComponentInView(entry.isIntersecting);
+        if (!entry.isIntersecting) {
+          setIsLastSlide(false); // Reset when component goes out of view
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (componentRef.current) {
+      observer.observe(componentRef.current);
+      window.addEventListener('wheel', handleScroll, { passive: false });
+    }
+
+    return () => {
+      if (componentRef.current) {
+        observer.unobserve(componentRef.current);
+      }
+      window.removeEventListener('wheel', handleScroll);
+    };
+  }, [isComponentInView, isLastSlide, activeIndex]);
+
   const handleSlideChange = (swiper) => {
     const activeSlideIndex = swiper.activeIndex;
     setActiveIndex(activeSlideIndex);
-    setBackgroundImage(imageMapping[activeSlideIndex] || weOfferImage); // Default to weOfferImage if not found
+    setBackgroundImage(imageMapping[activeSlideIndex] || weOfferImage);
+    
+    // Check if we've reached the last slide
+    if (activeSlideIndex === whatOfferList.length - 1) {
+      setIsLastSlide(true);
+    } else {
+      setIsLastSlide(false);
+    }
   };
 
   return (
-    <div className="max-w-3xl md:max-w-4xl lg:max-w-7xl mx-auto mb-24 px-4 sm:px-2">
+    <div ref={componentRef} className="max-w-3xl md:max-w-4xl lg:max-w-7xl mx-auto mb-24 px-4 sm:px-2">
       {/* TITLE */}
       <div className="mb-8 flex flex-col items-center justify-center sm:block">
         <h2 className="text-3xl md:text-5xl font-medium text-black pb-3">
@@ -77,15 +170,15 @@ export default function WhatWeOffer() {
               "--swiper-pagination-color": "#fff",
             }}
             speed={600}
-            parallax={true}
+            parallax={typeof window !== "undefined" && window.innerWidth >= 640}
             pagination={{
               enabled: false,
               clickable: false,
             }}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
+            // autoplay={{
+            //   delay: 25000,
+            //   disableOnInteraction: false,
+            // }}
             navigation={false}
             modules={[Autoplay, Parallax, Pagination, Navigation]}
             className="mySwiper rounded-2xl"
