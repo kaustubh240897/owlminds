@@ -48,6 +48,18 @@ export default function HeroSection() {
               <span className="font-[500] md:font-[500]">Develop <span className="font-[700]">Leadership</span></span>
               <div className="font-[700] md:font-[700]"> & Critical Thinking</div>
               <div className="font-[500]  md:font-[500]">Skills</div>
+              <a href="/" download>
+                <button className="bg-[#fff] text-black px-4 py-2 rounded-[20px] font-[400] text-[24px] mt-2 flex items-center gap-2 cursor-pointer">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_454_3011" style={{maskType:"alpha"}} maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                  <rect width="24" height="24" fill="black"/>
+                  </mask>
+                  <g mask="url(#mask0_454_3011)">
+                  <path d="M12 15.8209L7 11.3122L8.4 10.0046L11 12.3492V5H13V12.3492L15.6 10.0046L17 11.3122L12 15.8209ZM6 19.4278C5.45 19.4278 4.97917 19.2512 4.5875 18.898C4.19583 18.5449 4 18.1203 4 17.6243V14.9191H6V17.6243H18V14.9191H20V17.6243C20 18.1203 19.8042 18.5449 19.4125 18.898C19.0208 19.2512 18.55 19.4278 18 19.4278H6Z" fill="#292929"/>
+                  </g>
+                  </svg>
+                Download Curriculum</button>
+              </a>
             </div>
             <Image src={HeroCurriculumImage} alt="Curriculum-Image" layout="fill" objectFit="contain" />
           </div>
