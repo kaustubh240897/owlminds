@@ -16,10 +16,10 @@ export default function Qualities() {
       </div>
 
       {/* Card grid container */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-6xl mx-auto p-4 md:gap-y-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-6xl mx-auto p-0 sm:p-4 md:gap-y-0">
         {/* Cards */}
         <div className="bg-[url(@/assets/images/features_card4.png)] bg-cover bg-center h-60 sm:h-80 rounded-xl shadow-lg">
-          <div className="bg-gradient-to-r from-[#3F61E9] to-[#80C4E9] bg-clip-text text-transparent text-xl md:text-3xl font-bold mt-16 md:mt-20 ml-5 md:ml-10">
+          <div className="bg-gradient-to-r from-[#3F61E9] to-[#80C4E9] bg-clip-text text-transparent text-2xl md:text-3xl font-bold mt-16 md:mt-20 ml-5 md:ml-10">
             Officer-Like Qualities
             <div className="text-[#757575] text-sm md:text-base font-medium mt-3 md:mt-4 max-w-[250px] md:max-w-[300px]">
               Develop core leadership skills and confidence through our unique
@@ -30,7 +30,8 @@ export default function Qualities() {
         </div>
         <div className="bg-[url(@/assets/images/features_card3.png)] bg-cover bg-center h-60 sm:h-80 rounded-xl shadow-lg md:mt-10">
           <div className="bg-gradient-to-r from-[#3F61E9] to-[#80C4E9] bg-clip-text text-transparent text-2xl md:text-3xl font-bold mt-16 md:mt-20 ml-5 md:ml-10">
-            AI & Metaverse Explorers
+            AI & Metaverse <br />
+            Explorers
             <div className="text-[#757575] text-sm md:text-base font-medium mt-3 md:mt-4 max-w-[250px] md:max-w-[300px]">
               Develop your child's reasoning and decision-making skills as they
               explore the exciting world of artificial intelligence and the
