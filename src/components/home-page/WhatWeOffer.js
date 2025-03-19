@@ -158,13 +158,17 @@ export default function WhatWeOffer() {
           {whatOfferList.map((item, i) => (
             <div
               key={i}
-              className="border-t border-gray-300 flex items-center pt-6"
+              className="border-t border-gray-300 flex items-center pt-6 cursor-pointer"
+              onClick={() => {
+                swiperRef.current.swiper.slideTo(i);
+                setActiveIndex(i);
+              }}
             >
               {activeIndex === i && <ForwardArrowIcon />}
               <p
                 className={`${
                   activeIndex === i ? "text-purple-700" : "text-black"
-                } text-2xl pl-2  `}
+                } text-2xl pl-2 hover:text-purple-700 transition-colors duration-200`}
               >
                 {item.title}
               </p>
