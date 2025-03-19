@@ -14,7 +14,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <WhatWeOffer />
-      {/* <Qualities /> */}
+      <Qualities />
       <Empower />
       <Instructors />
       <FAQ />
