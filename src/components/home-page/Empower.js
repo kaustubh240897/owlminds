@@ -96,7 +96,7 @@ export default function Empower() {
                 ))}
               </div>
               <a
-                href="/"
+                href="/register"
                 className="bg-[#7F00FF] text-white text-[16px] font-[700] leading-[24px] w-full py-2 rounded-lg mt-4 text-center block"
               >
                 Book a Free Class!
