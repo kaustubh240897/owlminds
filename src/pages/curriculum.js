@@ -1,0 +1,17 @@
+import Link from "next/link";
+import Navbar from "../components/home-page/Navbar";
+import Footer from "@/components/home-page/Footer";
+import FAQ from "@/components/home-page/FAQ";
+import WhatWeOffer from "@/components/home-page/WhatWeOffer";
+
+
+export default function Curriculum() {
+  return (
+    <div>
+      <Navbar />
+      <WhatWeOffer />
+      <FAQ />
+      <Footer />
+    </div>
+  );
+}

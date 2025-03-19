@@ -17,12 +17,14 @@ export default function Navbar() {
           {/* Logo and Links Section */}
           <div className="flex flex-1 items-center justify-start sm:items-stretch sm:justify-between">
             <div className="flex shrink-0 items-center pl-4 sm:pl-0">
-              <LogoNav width={150} height={70} />
+              <Link href="/">
+                <LogoNav width={150} height={70} />
+              </Link>
             </div>
             <div className="hidden sm:ml-6 sm:block sm:my-auto">
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href="/curriculum"
                   className="rounded-md px-3 py-2 text-lg text-black hover:text-purple-700"
                 >
                   Curriculum+Pricing
