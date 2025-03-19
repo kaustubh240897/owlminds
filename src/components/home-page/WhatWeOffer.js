@@ -27,6 +27,15 @@ export default function WhatWeOffer() {
   const componentRef = useRef(null);
   let slideTimeout = null;
 
+  // Reset slider on page refresh
+  useEffect(() => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideTo(0);
+      setActiveIndex(0);
+      setBackgroundImage(weOfferImage);
+    }
+  }, []);
+
   const imageMapping = {
     0: weOfferImage,
     1: weOfferImage,
