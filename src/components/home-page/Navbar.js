@@ -104,7 +104,7 @@ export default function Navbar() {
       >
         <div className="space-y-1 px-2 pt-8 pb-3">
           <a
-            href="#"
+            href="/curriculum"
             className="block rounded-md px-3 py-2 text-xl text-black  hover:text-purple-700"
           >
             Curriculum+Pricing

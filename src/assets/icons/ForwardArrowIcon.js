@@ -1,15 +1,15 @@
 export default function ForwardArrowIcon(props) {
   return (
     <svg
-      width="32"
-      height="16"
+      width={props.width ?? "32"}
+      height={props.height ?? "16"}
       viewBox="0 0 32 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M21.7201 14.3661L23.3461 15.9923L31.0591 8.27929L23.3461 0.566406L21.7201 2.19248L26.657 7.12932H0.941406V9.42928H26.657L21.7201 14.3661Z"
-        fill="#7F00FF"
+        fill={props.color ?? "#7F00FF"}
       />
     </svg>
   );

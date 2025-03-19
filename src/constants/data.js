@@ -2,6 +2,10 @@ import TeamBG1 from "@/assets/images/team_card1.png";
 import TeamBG2 from "@/assets/images/team_card2.png";
 import TeamBG3 from "@/assets/images/team_card3.png";
 
+// Testimonials Images
+
+import TestimonialImage from "@/assets/images/testimonial.png";
+
 export const childGradeData = [
   {
     id: "1",
@@ -252,5 +256,26 @@ export const whatOfferList = [
     title: "Innovating",
     imageDesc:
       "Fundamentals Building lays the foundation for strong cognitive and leadership skills. It nurtures reasoning ability and emotional intelligence, helping children develop organizing skills and self-confidence in expression. ",
+  },
+];
+
+export const testimonialData = [
+  {
+    id: 1,
+    name: "Dr. Farida Khan",
+    image: TestimonialImage,
+    desc: "Using OwlMinds has revolutionized how we manage tasks and collaborate as a team. Its intuitive design and powerful features have significantly boosted our productivity and efficiency.",
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    image: TestimonialImage,
+    desc: "Using OwlMinds has revolutionized how we manage tasks and collaborate as a team. Its intuitive design and powerful features have significantly boosted our productivity and efficiency.",
+  },
+  {
+    id: 3,
+    name: "John Doe",
+    image: TestimonialImage,
+    desc: "Using OwlMinds has revolutionized how we manage tasks and collaborate as a team. Its intuitive design and powerful features have significantly boosted our productivity and efficiency.",
   },
 ];

@@ -1,8 +1,8 @@
-export default function CustomButton({ label, icon }) {
+export default function CustomButton({ label, icon, classes }) {
   return (
     <div className="flex justify-center items-center pt-1">
       <button
-        className="w-full bg-violet-600 cursor-pointer py-2 rounded-lg flex justify-center items-center gap-2 font-bold"
+        className={`w-full cursor-pointer py-2 rounded-lg flex justify-center items-center gap-2 font-bold ${classes}`}
         type="submit"
       >
         {icon && (

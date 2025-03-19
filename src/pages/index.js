@@ -7,6 +7,8 @@ import Empower from "@/components/home-page/Empower";
 import Qualities from "@/components/home-page/Qualities";
 import WhatWeOffer from "@/components/home-page/WhatWeOffer";
 import HeroSection from "@/components/home-page/HeroSection";
+import FutureSuccess from "@/components/home-page/FutureSuccess";
+import Testimonials from "@/components/home-page/Testimonials";
 
 export default function Home() {
   return (
@@ -14,8 +16,10 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <WhatWeOffer />
+      <FutureSuccess />
       <Qualities />
       <Empower />
+      <Testimonials />
       <Instructors />
       <FAQ />
       <Footer />

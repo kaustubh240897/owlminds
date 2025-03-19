@@ -21,7 +21,7 @@ export default function Empower() {
         </div>
       </div>
       <div
-        className="w-full h-[700px] md:h-[459px] relative"
+        className="w-full h-[700px] md:h-[459px] relative mb-24"
         style={{ background: "rgba(127, 0, 255, 1)" }}
       >
         <svg
