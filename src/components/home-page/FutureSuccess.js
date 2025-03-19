@@ -3,7 +3,7 @@ import bgImage from "@/assets/images/building_blocks.png";
 
 export default function FutureSuccess() {
   return (
-    <div className="relative w-full bg-[url(../assets/images/building_block_mob.png)] sm:bg-[url(../assets/images/building_blocks.png)] h-[850px] sm:h-[880px] bg-cover bg-center flex items-center justify-center mb-24">
+    <div className="relative w-full bg-[url(../assets/images/building_block_mob.png)] sm:bg-[url(../assets/images/building_blocks.png)] h-[850px] sm:h-[780px] bg-cover bg-center flex items-center justify-center mb-24">
       <div className="absolute top-4 px-8 sm:px-0 max-w-3xl md:max-w-4xl lg:max-w-7xl">
         <h1 className="text-5xl text-center sm:text-left sm:text-7xl font-semibold w-full sm:w-1/2 text-black mb-6">
           Building Blocks of Future Success
