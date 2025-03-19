@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "next/image";
 
 // Import Swiper styles
 import "swiper/css";
@@ -13,6 +14,7 @@ import "@/styles/globals.css";
 // import required modules
 import { Autoplay, Parallax, Pagination, Navigation } from "swiper/modules";
 import weOfferImage from "@/assets/images/we_offer.png";
+import RibbonImage from "@/assets/images/ribbon_clip.png";
 import { whatOfferList } from "@/constants/data";
 import ForwardArrowIcon, { ChevronIcon } from "@/assets/icons/ForwardArrowIcon";
 
