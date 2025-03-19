@@ -250,16 +250,26 @@ export default function WhatWeOffer() {
 
           <div className="absolute w-full left-0 right-0 px-2 flex sm:hidden justify-between bottom-30">
             <button
-              onClick={() => swiperRef.current.swiper.slidePrev()} // Go to the previous slide
-              className="text-white bg-purple-700 p-2 rounded-sm rotate-180"
+              onClick={() => swiperRef.current.swiper.slidePrev()}
+              className={`p-2 rounded-sm rotate-180 ${
+                activeIndex === 0
+                  ? 'bg-gray-400 cursor-not-allowed'
+                  : 'bg-purple-700'
+              }`}
+              disabled={activeIndex === 0}
             >
-              <ChevronIcon />
+              <ChevronIcon className={activeIndex === 0 ? 'text-gray-200' : 'text-white'} />
             </button>
             <button
-              onClick={() => swiperRef.current.swiper.slideNext()} // Go to the next slide
-              className="text-white bg-purple-700 p-2 rounded-sm"
+              onClick={() => swiperRef.current.swiper.slideNext()}
+              className={`p-2 rounded-sm ${
+                activeIndex === whatOfferList.length - 1
+                  ? 'bg-gray-400 cursor-not-allowed'
+                  : 'bg-purple-700'
+              }`}
+              disabled={activeIndex === whatOfferList.length - 1}
             >
-              <ChevronIcon />
+              <ChevronIcon className={activeIndex === whatOfferList.length - 1 ? 'text-gray-200' : 'text-white'} />
             </button>
           </div>
         </div>
