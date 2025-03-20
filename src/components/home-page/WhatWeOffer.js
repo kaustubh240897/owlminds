@@ -20,7 +20,7 @@ import ForwardArrowIcon, { ChevronIcon } from "@/assets/icons/ForwardArrowIcon";
 
 export default function WhatWeOffer() {
   const [backgroundImage, setBackgroundImage] = useState(weOfferImage);
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [isComponentInView, setIsComponentInView] = useState(false);
   const [isLastSlide, setIsLastSlide] = useState(false);
   const swiperRef = useRef(null);
