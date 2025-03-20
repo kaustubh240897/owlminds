@@ -32,7 +32,7 @@ export default function HeroSection() {
             alt="Creator-Image"
             layout="responsive"
             objectFit="contain"
-            className="sm:hidden w-full"
+            className="sm:hidden "
           />
           <Image
             src={HeroCreatorImage}
@@ -43,9 +43,9 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Other content */}
+        {/* Calender content */}
         <div className="col-span-1 sm:col-span-3 sm:row-span-6 sm:col-start-7">
-          <div className="col-span-6 row-span-9 relative sm:h-110 h-100">
+          <div className="col-span-6 row-span-9 relative sm:h-110 h-88">
             <div className="absolute md:top-6 top-7 sm:left-4 text-center sm:text-left w-full md:text-3xl text-3xl p-2 text-white bg-opacity-75 rounded z-10 leading-8 md:leading-8">
               <p className="w-full sm:w-1/2">Book a Trial Class</p>
             </div>
@@ -59,9 +59,9 @@ export default function HeroSection() {
 
               <Image
                 src={Calender}
-                className="absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                height={250}
-                width={230}
+                className="absolute w-[190px] sm:h-[250px] sm:w-[230px] top-[57%] sm:top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                // height={250}
+                // width={230}
               />
 
               <div>
@@ -74,16 +74,16 @@ export default function HeroSection() {
         </div>
         <div className="col-span-1 sm:col-span-3 sm:row-span-3 sm:col-start-7 sm:row-start-7">
           <div className="col-span-6 row-span-9 relative w-full h-55">
-            <div className="absolute top-4 left-4 p-2 text-white md:text-[28px] text-[24px] font-bold bg-opacity-75 rounded z-10 md:leading-[40px] leading-[30px]">
+            <div className="absolute top-4 left-4 px-2 py-4 sm:py-2 text-white md:text-[28px] text-[24px] font-bold bg-opacity-75 rounded z-10 md:leading-[40px] leading-[30px]">
               <span className="font-[500] md:font-[500]">
                 Develop <span className="font-[700]">Leadership</span>
               </span>
               <div className="font-[700] md:font-[700]">
                 & Critical Thinking
               </div>
-              <div className="font-[500]  md:font-[500]">Skills</div>
+              <div className="font-[500] md:font-[500]">Skills</div>
               <a href="/" download>
-                <button className="bg-white text-black px-4 py-2 rounded-xl font-[400] text-xl mt-2 flex items-center gap-2 cursor-pointer">
+                <button className="bg-white text-black px-4 py-2 rounded-xl font-[400] text-xl mt-4 sm:mt-2 flex items-center gap-2 cursor-pointer">
                   <svg
                     width="24"
                     height="24"
@@ -125,11 +125,11 @@ export default function HeroSection() {
 
       {/* ABOUT SECTION */}
       <div className="flex flex-col sm:flex-row items-start gap-x-60">
-        <div className="w-full flex items-start justify-center sm:justify-start">
-          <div className="h-12 w-12 sm:h-20 sm:w-20">
+        <div className="w-full mb-4 sm:mb-0 flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start">
+          <div className="h-12 w-12 sm:h-20 sm:w-20 ">
             <Image src={AboutUsIcon} />
           </div>
-          <h2 className="uppercase text-3xl md:text-5xl font-medium sm:pl-8">
+          <h2 className="uppercase text-3xl md:text-5xl font-medium sm:pl-8 -mt-4 sm:mt-0">
             About OwlMinds
           </h2>
         </div>
