@@ -9,7 +9,7 @@ export default function Empower() {
 
   return (
     <>
-      <div className="w-full h-[660px] bg-cover bg-center flex items-center justify-center bg-[url(../assets/images/Empower.png)]">
+      <div className="w-full h-[660px] bg-cover bg-center flex items-center justify-center bg-[url(../assets/images/empower1.png)]">
         <div className="text-center text-black max-w-3xl px-4">
           <p className="text-4xl sm:text-[54px] font-[500] pb-4 sm:pb-0 leading-12 sm:leading-[61px] text-white">
             From Ideas to Standing Ovations!
