@@ -16,10 +16,12 @@ export default function FutureSuccess() {
         </p>
 
         <div className="my-10">
-          <button className="bg-[#7f00ff] flex items-center mx-auto sm:mx-0 px-8 py-3 rounded-xl text-base sm:text-xl">
-            <p className="pr-2">Book a FREE Trail Class</p>
-            <ForwardArrowIcon color={"#fff"} height={14} width={24} />
-          </button>
+          <a href="/register" className="block">
+            <button className="bg-[#7f00ff] flex items-center mx-auto sm:mx-0 px-8 py-3 rounded-xl text-base sm:text-xl cursor-pointer">
+              <p className="pr-2">Book a FREE Trail Class</p>
+              <ForwardArrowIcon color={"#fff"} height={14} width={24} />
+            </button>
+          </a>
         </div>
       </div>
     </div>

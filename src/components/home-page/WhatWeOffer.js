@@ -161,13 +161,18 @@ export default function WhatWeOffer() {
             {whatOfferList.map((item, i) => (
               <div
                 key={i}
-                className="border-t border-gray-300 flex items-center pt-6"
+                className="border-t border-gray-300 flex items-center pt-6 cursor-pointer z-100"
+                onClick={(e) => {
+                  if (window.innerWidth >= 640) { // Only for desktop
+                    swiperRef.current.swiper.slideTo(i);
+                  }
+                }}
               >
                 {activeIndex === i && <ForwardArrowIcon />}
                 <p
                   className={`${
                     activeIndex === i ? "text-purple-700" : "text-black"
-                  } text-2xl pl-2  `}
+                  } text-2xl pl-2 hover:text-purple-700`}
                 >
                   {item.title}
                 </p>
@@ -249,16 +254,22 @@ export default function WhatWeOffer() {
               </div>
             )}
 
-            <div className="absolute w-full left-0 right-0 px-2 flex sm:hidden justify-between bottom-30">
+            <div className="absolute w-full left-0 right-0 px-2 flex sm:hidden justify-between bottom-30 z-100">
               <button
-                onClick={() => swiperRef.current.swiper.slidePrev()} // Go to the previous slide
-                className="text-white bg-purple-700 p-2 rounded-sm rotate-180"
+                onClick={() => swiperRef.current.swiper.slidePrev()}
+                className={`text-white bg-purple-700 p-2 rounded-sm rotate-180 ${
+                  activeIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
+                disabled={activeIndex === 0}
               >
                 <ChevronIcon />
               </button>
               <button
-                onClick={() => swiperRef.current.swiper.slideNext()} // Go to the next slide
-                className="text-white bg-purple-700 p-2 rounded-sm"
+                onClick={() => swiperRef.current.swiper.slideNext()}
+                className={`text-white bg-purple-700 p-2 rounded-sm ${
+                  activeIndex === whatOfferList.length - 1 ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
+                disabled={activeIndex === whatOfferList.length - 1}
               >
                 <ChevronIcon />
               </button>
