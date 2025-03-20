@@ -9,9 +9,7 @@ export default function Curriculum() {
   return (
     <div>
       <Navbar />
-      <div className="mt-0 sm:mt-32">
-        <WhatWeOffer />
-      </div>
+      <WhatWeOffer ribbon={false} backImg={true} />
       <PricingCard />
       <FAQ />
       <Footer />

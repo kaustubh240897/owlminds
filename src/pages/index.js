@@ -15,7 +15,7 @@ export default function Home() {
     <div>
       <Navbar />
       <HeroSection />
-      <WhatWeOffer />
+      <WhatWeOffer ribbon={true} />
       <FutureSuccess />
       <Qualities />
       <Empower />

@@ -15,10 +15,11 @@ import "@/styles/globals.css";
 import { Autoplay, Parallax, Pagination, Navigation } from "swiper/modules";
 import weOfferImage from "@/assets/images/we_offer.png";
 import RibbonImage from "@/assets/images/ribbon_clip.png";
+import BackgroundImg from "@/assets/images/curriculum_background.png";
 import { whatOfferList } from "@/constants/data";
 import ForwardArrowIcon, { ChevronIcon } from "@/assets/icons/ForwardArrowIcon";
 
-export default function WhatWeOffer() {
+export default function WhatWeOffer({ ribbon, backImg }) {
   const [backgroundImage, setBackgroundImage] = useState(weOfferImage);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isComponentInView, setIsComponentInView] = useState(false);
@@ -139,10 +140,17 @@ export default function WhatWeOffer() {
   };
 
   return (
-    <div className="relative">
-      <div className="absolute z-50 top-26 sm:-top-32 h-full w-full">
-        <Image src={RibbonImage} width={"100%"} height={"100%"} />
-      </div>
+    <div className="relative" style={backImg ? { 
+      backgroundImage: `url(${BackgroundImg.src})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      paddingTop: '100px'
+    } : {}}>
+      {ribbon && (
+        <div className="absolute z-50 top-26 sm:-top-32 h-full w-full">
+          <Image src={RibbonImage} width={"100%"} height={"100%"} />
+        </div>
+      )}
       <div
         ref={componentRef}
         className="max-w-3xl md:max-w-4xl lg:max-w-7xl mx-auto mb-24 px-4 sm:px-2"
@@ -150,7 +158,7 @@ export default function WhatWeOffer() {
         {/* TITLE */}
         <div className="mb-24 sm:mb-8 flex flex-col items-center justify-center sm:block">
           <h2 className="text-3xl md:text-5xl font-medium text-black pb-3">
-            What We Offer
+            {backImg ? "Our Curriculum" : "What We Offer"}
           </h2>
           <p className="text-black/70 text-lg">
             8 modules, 8 classes endless growth!
@@ -179,7 +187,10 @@ export default function WhatWeOffer() {
               </div>
             ))}
           </div>
-          <div className="relative col-span-1 sm:col-span-2 h-[600px] bg-[#fff6e9] px-4 pt-6 pb-60 sm:px-8 sm:py-12 rounded-2xl sm:rounded-[40px]">
+          <div 
+            className="relative col-span-1 sm:col-span-2 h-[600px] px-4 pt-6 pb-60 sm:px-8 sm:py-12 rounded-2xl sm:rounded-[40px]"
+            style={{ backgroundColor: backImg ? 'rgba(127, 0, 255, 0.13)' : '#fff6e9' }}
+          >
             <Swiper
               ref={swiperRef}
               style={{

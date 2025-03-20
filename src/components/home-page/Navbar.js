@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import CalendarIcon from "@/assets/icons/CalenderIcon";
 import { LogoNav } from "@/assets/icons/Logo";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -25,16 +27,23 @@ export default function Navbar() {
               <div className="flex space-x-4">
                 <a
                   href="/curriculum"
-                  className="rounded-md px-3 py-2 text-lg text-black hover:text-purple-700"
+                  className={`rounded-md px-3 py-1 text-lg relative ${
+                    router.pathname === "/curriculum"
+                      ? "font-bold text-black"
+                      : "text-black hover:text-purple-700"
+                  }`}
                 >
                   Curriculum+Pricing
+                  {router.pathname === "/curriculum" && (
+                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[30px] h-[2px] bg-purple-700"></span>
+                  )}
                 </a>
-                <a
+                {/* <a
                   href="#"
                   className="rounded-md px-3 py-2 text-lg text-black hover:text-purple-700"
                 >
                   FAQs
-                </a>
+                </a> */}
               </div>
             </div>
             <div className="hidden sm:ml-6 sm:block sm:my-auto">
@@ -105,16 +114,20 @@ export default function Navbar() {
         <div className="space-y-1 px-2 pt-8 pb-3">
           <a
             href="/curriculum"
-            className="block rounded-md px-3 py-2 text-xl text-black  hover:text-purple-700"
+            className={`block rounded-md px-3 py-1 text-xl relative ${
+              router.pathname === "/curriculum"
+                ? "font-bold text-black"
+                : "text-black hover:text-purple-700"
+            }`}
           >
             Curriculum+Pricing
           </a>
-          <a
+          {/* <a
             href="#"
             className="block rounded-md px-3 mt-4 py-2 text-xl text-black hover:text-purple-700"
           >
             FAQs
-          </a>
+          </a> */}
 
           <div className="mt-4 bg-amber-100 block sm:ml-6 sm:hidden sm:my-auto">
             <Link href="/register">
