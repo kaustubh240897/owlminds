@@ -13,7 +13,7 @@ export default function HeroSection() {
       <div className="grid grid-col-1 sm:grid-cols-9 sm:grid-rows-9 sm:gap-x-5 sm:gap-y-0 gap-y-5 mb-20 sm:mb-16">
         {/* Image div with relative positioning and height */}
         <div className="col-span-1 sm:col-span-6 sm:row-span-9 relative rounded-2xl ">
-          <div className="absolute md:top-35 top-10 left-6 p-2 bg-opacity-75 rounded z-10 text-black md:text-[90px] text-[45px] font-bold leading-[40px] md:leading-[80px] text-center md:text-left">
+          <div className="absolute md:top-35 top-10 sm:left-6 left-4 p-2 bg-opacity-75 rounded z-10 text-black md:text-[90px] text-[45px] font-bold leading-[40px] md:leading-[80px] text-center md:text-left">
             CREATORS
             <br />
             FOR Life
