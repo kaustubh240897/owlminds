@@ -4,77 +4,72 @@ import HeroCreatorImageMob from "@/assets/images/Hero_Banner_mob.png";
 import HeroCalenderImage from "@/assets/images/calender_frame.png";
 import HeroCurriculumImage from "@/assets/images/medal.png";
 import AboutUsIcon from "@/assets/images/about_us_icon.png";
-
 import Calender from "@/assets/images/Calendar-3.png";
 
 export default function HeroSection() {
   return (
     <div className="max-w-3xl md:max-w-5xl lg:max-w-7xl mx-auto mb-16 sm:mb-44 px-4 sm:px-2 text-black">
-      <div className="grid grid-col-1 sm:grid-cols-9 sm:grid-rows-9 sm:gap-x-5 sm:gap-y-0 gap-y-5 mb-20 sm:mb-16">
-        {/* Image div with relative positioning and height */}
-        <div className="col-span-1 sm:col-span-6 sm:row-span-9 relative rounded-2xl ">
-          <div className="absolute md:top-35 top-10 sm:left-6 left-4 p-2 bg-opacity-75 rounded z-10 text-black md:text-[90px] text-[45px] font-bold leading-[40px] md:leading-[80px] text-center md:text-left">
-            CREATORS
-            <br />
-            FOR Life
-            <div className="md:text-[32px] text-[20px] font-medium leading-[30px] mt-4 text-center md:text-left">
-              Help your child unlock their{" "}
-              <span className="hidden md:inline">
-                {" "}
-                <br />{" "}
-              </span>{" "}
-              potential.
+      <div className="grid grid-col-1 sm:grid-cols-9 sm:grid-rows-9 gap-y-5 sm:gap-y-0 sm:gap-x-5 mb-20 sm:mb-16">
+        <div className="col-span-1 sm:col-span-6 sm:row-span-9 relative rounded-2xl">
+          {/* Creator */}
+          <div className="relative">
+            <div className="absolute md:top-35 top-10 sm:left-6 left-4 p-2 bg-opacity-75 rounded z-10 text-black md:text-[90px] text-[45px] font-bold leading-[40px] md:leading-[80px] text-center md:text-left">
+              CREATORS
+              <br />
+              FOR Life
+              <div className="md:text-[32px] text-[20px] font-medium leading-[30px] mt-4 text-center md:text-left">
+                Help your child unlock their{" "}
+                <span className="hidden md:inline">
+                  <br />
+                </span>
+                potential.
+              </div>
             </div>
+            <Image
+              src={HeroCreatorImageMob}
+              alt="Creator-Image"
+              layout="responsive"
+              objectFit="contain"
+              className="sm:hidden "
+            />
+            <Image
+              src={HeroCreatorImage}
+              alt="Creator-Image"
+              objectFit="contain"
+              className="hidden sm:block"
+            />
           </div>
-
-          <Image
-            src={HeroCreatorImageMob}
-            alt="Creator-Image"
-            layout="responsive"
-            objectFit="contain"
-            className="sm:hidden "
-          />
-          <Image
-            src={HeroCreatorImage}
-            alt="Creator-Image"
-            layout="fill"
-            objectFit="contain"
-            className="hidden sm:block"
-          />
         </div>
 
-        {/* Calender content */}
+        {/* Calender */}
         <div className="col-span-1 sm:col-span-3 sm:row-span-6 sm:col-start-7">
-          <div className="col-span-6 row-span-9 relative sm:h-110 h-88">
+          <div className="relative">
             <div className="absolute md:top-6 top-7 sm:left-4 text-center sm:text-left w-full md:text-3xl text-3xl p-2 text-white bg-opacity-75 rounded z-10 leading-8 md:leading-8">
               <p className="w-full sm:w-1/2">Book a Trial Class</p>
             </div>
-            <div className="relative h-0 pb-[100%] rounded-[30px] overflow-hidden">
-              <Image
-                src={HeroCalenderImage}
-                alt="Hero-Calender-Image"
-                layout="fill"
-                objectFit="contain"
-              />
+            <Image
+              src={HeroCalenderImage}
+              alt="Hero-Calender-Image"
+              objectFit="contain"
+            />
 
-              <Image
-                src={Calender}
-                className="absolute w-[190px] sm:h-[250px] sm:w-[230px] top-[57%] sm:top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                // height={250}
-                // width={230}
-              />
+            <Image
+              src={Calender}
+              className="absolute w-[190px] sm:h-[250px] sm:w-[230px] top-[57%] sm:top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            />
 
-              <div>
-                <button className="absolute rounded-md -bottom-2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#7f00ff] px-3 py-1 text-xs text-white">
-                  Book a FREE Trail Class
-                </button>
-              </div>
+            <div>
+              <button className="absolute rounded-md -bottom-2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#7f00ff] px-3 py-1 text-xs text-white">
+                Book a FREE Trail Class
+              </button>
             </div>
           </div>
         </div>
+
+        {/* Badge UI */}
         <div className="col-span-1 sm:col-span-3 sm:row-span-3 sm:col-start-7 sm:row-start-7">
-          <div className="col-span-6 row-span-9 relative w-full h-55">
-            <div className="absolute top-4 left-4 px-2 py-4 sm:py-2 text-white md:text-[28px] text-[24px] font-bold bg-opacity-75 rounded z-10 md:leading-[40px] leading-[30px]">
+          <div className="relative">
+            <div className="absolute top-0 sm:top-2 left-4 px-2 py-4 sm:py-2 text-white md:text-[28px] text-[24px] font-bold bg-opacity-75 rounded z-10 md:leading-[40px] leading-[30px]">
               <span className="font-[500] md:font-[500]">
                 Develop <span className="font-[700]">Leadership</span>
               </span>
@@ -116,7 +111,6 @@ export default function HeroSection() {
             <Image
               src={HeroCurriculumImage}
               alt="Curriculum-Image"
-              layout="fill"
               objectFit="contain"
             />
           </div>
