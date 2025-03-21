@@ -217,7 +217,7 @@ export const whatOfferList = [
   },
   {
     id: "1",
-    title: "Practicing",
+    title: "Practising",
     imageDesc:
       "Fundamentals Building lays the foundation for strong cognitive and leadership skills. It nurtures reasoning ability and emotional intelligence, helping children develop organizing skills and self-confidence in expression. ",
   },

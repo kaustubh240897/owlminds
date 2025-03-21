@@ -25,11 +25,11 @@ export default function FutureSuccess() {
         />
       </div>
       <div className="flex justify-center">
-        <div className="mx-auto max-w-3xl md:max-w-5xl lg:max-w-7xl absolute top-4 px-8 sm:px-0">
+        <div className="mx-auto max-w-3xl md:max-w-5xl lg:max-w-7xl absolute top-4 sm:top-30 px-8 sm:px-0">
           <h1 className="text-5xl text-center sm:text-left sm:text-7xl font-semibold w-full sm:w-1/2 text-black mb-6">
             Building Blocks of Future Success
           </h1>
-          <p className="text-black text-center text-lg sm:text-xl sm:text-left w-full sm:w-3/4">
+          <p className="text-black text-center text-lg sm:text-xl sm:text-left w-full sm:w-1/2">
             Lay the foundation for your child's success with OwlMinds'
             comprehensive curriculum. Each 'building block' – from leadership
             and innovation to digital fluency and financial confidence – is

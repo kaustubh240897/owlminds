@@ -26,6 +26,7 @@ export default function WhatWeOffer({ ribbon, backImg }) {
   const [isLastSlide, setIsLastSlide] = useState(false);
   const swiperRef = useRef(null);
   const componentRef = useRef(null);
+  const [isFullyVisible, setIsFullyVisible] = useState(false);
   let slideTimeout = null;
 
   const imageMapping = {
@@ -42,16 +43,17 @@ export default function WhatWeOffer({ ribbon, backImg }) {
   useEffect(() => {
     let isScrolling = false;
     let lastScrollTime = Date.now();
-    const scrollDebounceTime = 300; // Increased from 200 to 300ms for slower response
-    const scrollAmount = 20; // Reduced from 50 to 30px for slower scrolling
-    const scrollDuration = 800; // Increased scroll animation duration
+    const scrollDebounceTime = 400;
+    const scrollAmount = 20;
+    const scrollDuration = 800;
 
     const handleScroll = (e) => {
       const now = Date.now();
       if (
         window.innerWidth < 640 ||
         isScrolling ||
-        now - lastScrollTime < scrollDebounceTime
+        now - lastScrollTime < scrollDebounceTime ||
+        !swiperRef.current?.swiper
       )
         return;
 
@@ -67,7 +69,7 @@ export default function WhatWeOffer({ ribbon, backImg }) {
             window.scrollBy({
               top: -scrollAmount,
               behavior: "smooth",
-              duration: scrollDuration, // Added custom duration
+              duration: scrollDuration,
             });
             swiperRef.current.swiper.slidePrev();
           }
@@ -79,15 +81,17 @@ export default function WhatWeOffer({ ribbon, backImg }) {
             window.scrollBy({
               top: scrollAmount,
               behavior: "smooth",
-              duration: scrollDuration, // Added custom duration
+              duration: scrollDuration,
             });
+            // Set isComponentInView to false after reaching last slide
+            setIsComponentInView(false);
           } else {
             e.preventDefault();
             if (activeIndex < whatOfferList.length - 1) {
               window.scrollBy({
                 top: scrollAmount,
                 behavior: "smooth",
-                duration: scrollDuration, // Added custom duration
+                duration: scrollDuration,
               });
               swiperRef.current.swiper.slideNext();
             } else {
@@ -96,7 +100,6 @@ export default function WhatWeOffer({ ribbon, backImg }) {
           }
         }
 
-        // Reset the flag after a short delay
         setTimeout(() => {
           isScrolling = false;
         }, scrollDebounceTime);
@@ -105,17 +108,34 @@ export default function WhatWeOffer({ ribbon, backImg }) {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsComponentInView(entry.isIntersecting);
-        if (!entry.isIntersecting) {
-          setIsLastSlide(false); // Reset when component goes out of view
+        if(entry.intersectionRatio === 1){
+          setIsFullyVisible(true);
+        }
+        else if(entry.intersectionRatio === 0){
+          setIsFullyVisible(false);
+        }
+        
+        if (isFullyVisible && swiperRef.current?.swiper) {
+          window.removeEventListener("wheel", handleScroll);
+          setIsComponentInView(true);
+          swiperRef.current.swiper.allowTouchMove = true;
+          swiperRef.current.swiper.allowSlideNext = true;
+          swiperRef.current.swiper.allowSlidePrev = true;
+          window.addEventListener("wheel", handleScroll, { passive: false });
+        }
+        else if (entry.intersectionRatio === 0 && swiperRef.current?.swiper) {
+          swiperRef.current.swiper.allowTouchMove = false;
+          swiperRef.current.swiper.allowSlideNext = false;
+          swiperRef.current.swiper.allowSlidePrev = false;
+          window.removeEventListener("wheel", handleScroll);
+          setIsLastSlide(false);
         }
       },
-      { threshold: 0.5 }
+      { threshold: [0, 1] }
     );
 
     if (componentRef.current) {
       observer.observe(componentRef.current);
-      window.addEventListener("wheel", handleScroll, { passive: false });
     }
 
     return () => {
@@ -124,7 +144,7 @@ export default function WhatWeOffer({ ribbon, backImg }) {
       }
       window.removeEventListener("wheel", handleScroll);
     };
-  }, [isComponentInView, isLastSlide, activeIndex]);
+  }, [isComponentInView, isLastSlide, activeIndex, isFullyVisible]);
 
   const handleSlideChange = (swiper) => {
     const activeSlideIndex = swiper.activeIndex;
@@ -205,10 +225,10 @@ export default function WhatWeOffer({ ribbon, backImg }) {
                 enabled: false,
                 clickable: false,
               }}
-              // autoplay={{
-              //   delay: 25000,
-              //   disableOnInteraction: false,
-              // }}
+              autoplay={{
+                delay: 50000,
+                disableOnInteraction: false,
+              }}
               navigation={false}
               modules={[Autoplay, Parallax, Pagination, Navigation]}
               className="mySwiper rounded-2xl"

@@ -9,7 +9,7 @@ import Calender from "@/assets/images/Calendar-3.png";
 export default function HeroSection() {
   return (
     <div className="max-w-3xl md:max-w-5xl lg:max-w-7xl mx-auto mb-16 sm:mb-44 px-4 sm:px-2 text-black">
-      <div className="grid grid-col-1 sm:grid-cols-9 sm:grid-rows-9 gap-y-5 sm:gap-y-0 sm:gap-x-5 mb-20 sm:mb-16">
+      <div className="grid grid-col-1 sm:grid-cols-9 sm:grid-rows-9 gap-y-5 sm:gap-y-0 sm:gap-x-2 mb-20 sm:mb-16">
         <div className="col-span-1 sm:col-span-6 sm:row-span-9 relative rounded-2xl">
           {/* Creator */}
           <div className="relative">

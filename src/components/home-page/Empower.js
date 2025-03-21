@@ -52,8 +52,8 @@ export default function Empower() {
 
         {/* Text content positioned on the left side */}
         <div className="relative z-10 flex flex-col md:flex-row h-full">
-          <div className="w-full md:w-1/2 flex items-center pl-4 md:pl-16">
-            <div className="text-white">
+          <div className="w-full md:w-1/2 flex items-center md:pl-16">
+            <div className="text-white text-center md:text-left">
               <h2 className="text-[36px] md:text-[54px] font-[500] leading-[40px] md:leading-[61px] mb-4 mt-10">
                 Ready to Empower Your Child?
               </h2>
@@ -64,7 +64,7 @@ export default function Empower() {
             </div>
           </div>
 
-          <div className="w-full md:w-1/2 flex justify-end pr-4 md:pr-16">
+          <div className="w-full md:w-1/2 flex justify-end md:pr-16">
             <div
               className="bg-white rounded-[30px] shadow-lg p-6 mt-10 mx-auto"
               style={{ height: "372px", width: "100%", maxWidth: "364px" }}
