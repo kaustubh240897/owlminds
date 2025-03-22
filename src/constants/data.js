@@ -219,50 +219,50 @@ export const whatOfferList = [
     id: "1",
     title: "Practising",
     imageDesc:
-      "Fundamentals Building lays the foundation for strong cognitive and leadership skills. It nurtures reasoning ability and emotional intelligence, helping children develop organizing skills and self-confidence in expression. ",
+      "Leadership is about action. This module helps students apply leadership skills in real-life scenarios, focusing on teamwork, communication, and emotional intelligence through interactive exercises.",
   },
   {
     id: "2",
     title: "Applying",
     imageDesc:
-      "Fundamentals Building lays the foundation for strong cognitive and leadership skills. It nurtures reasoning ability and emotional intelligence, helping children develop organizing skills and self-confidence in expression. ",
+      "Students move from theory to practical leadership, engaging in problem-solving, decision-making, and resilience-building activities. They learn to lead effectively under pressure.",
   },
   {
     id: "3",
-    title: "Analyzing",
+    title: "Kindness In Leadership",
     imageDesc:
-      "Fundamentals Building lays the foundation for strong cognitive and leadership skills. It nurtures reasoning ability and emotional intelligence, helping children develop organizing skills and self-confidence in expression. ",
+      "Leadership is about empathy and emotional intelligence. This module helps students lead with kindness, gratitude, and responsibility, ensuring they understand the human side of leadership.",
   },
   {
     id: "4",
-    title: "Evaluating",
+    title: "Growing Together in Leadership",
     imageDesc:
-      "Fundamentals Building lays the foundation for strong cognitive and leadership skills. It nurtures reasoning ability and emotional intelligence, helping children develop organizing skills and self-confidence in expression. ",
+      "Successful leaders build strong teams. This module focuses on teamwork, conflict resolution, and collaboration, helping students navigate group dynamics and lead collectively.",
   },
   {
     id: "5",
-    title: "Synthesizing",
+    title: "Digital Life Basics",
     imageDesc:
-      "Fundamentals Building lays the foundation for strong cognitive and leadership skills. It nurtures reasoning ability and emotional intelligence, helping children develop organizing skills and self-confidence in expression. ",
+      "In today’s world, digital literacy is essential. Students learn internet safety, AI, and responsible online communication, ensuring they become tech-savvy and ethical digital citizens.",
   },
   {
     id: "6",
-    title: "Iterating",
+    title: "Financial Literacy ",
     imageDesc:
-      "Fundamentals Building lays the foundation for strong cognitive and leadership skills. It nurtures reasoning ability and emotional intelligence, helping children develop organizing skills and self-confidence in expression. ",
+      "Financial responsibility is key to leadership. This module covers money management, budgeting, investment, and taxes, helping students make smart financial decisions for the future.",
   },
   {
     id: "7",
-    title: "Innovating",
+    title: "Entrepreneurial Attitude",
     imageDesc:
-      "Fundamentals Building lays the foundation for strong cognitive and leadership skills. It nurtures reasoning ability and emotional intelligence, helping children develop organizing skills and self-confidence in expression. ",
+      "Students develop an entrepreneurial mindset, learning business ideation, marketing, and execution strategies. The module culminates in a business pitch competition, reinforcing real-world skills.",
   },
 ];
 
 export const testimonialData = [
   {
     id: 1,
-    name: "Dr. Farida Khan",
+    name: "Jane Smith",
     image: TestimonialImage,
     desc: "Using OwlMinds has revolutionized how we manage tasks and collaborate as a team. Its intuitive design and powerful features have significantly boosted our productivity and efficiency.",
   },

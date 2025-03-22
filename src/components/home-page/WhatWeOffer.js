@@ -13,11 +13,18 @@ import "@/styles/globals.css";
 
 // import required modules
 import { Autoplay, Parallax, Pagination, Navigation } from "swiper/modules";
-import weOfferImage from "@/assets/images/we_offer.png";
+import weOfferImage from "@/assets/images/crousel1.png";
+import weOfferImage1 from "@/assets/images/crousel2.png";
+import weOfferImage2 from "@/assets/images/crousel3.png";
+import weOfferImage3 from "@/assets/images/crousel4.png";
+import weOfferImage4 from "@/assets/images/crousel5.png";
+import weOfferImage5 from "@/assets/images/crousel6.png";
+import weOfferImage6 from "@/assets/images/crousel7.png";
+import weOfferImage7 from "@/assets/images/crousel8.png";
 import RibbonImage from "@/assets/images/ribbon_clip.png";
 import RibbonImage1 from "@/assets/images/ribbon_clip_left_desktop.png";
 import RibbonImage2 from "@/assets/images/ribbon_clip_right_desktop.png";
-import BackgroundImg from "@/assets/images/curriculum_background.png";
+import BackgroundImg from "@/assets/images/curriculum_background1.png";
 import { whatOfferList } from "@/constants/data";
 import ForwardArrowIcon, { ChevronIcon } from "@/assets/icons/ForwardArrowIcon";
 
@@ -33,13 +40,13 @@ export default function WhatWeOffer({ ribbon, backImg }) {
 
   const imageMapping = {
     0: weOfferImage,
-    1: weOfferImage,
-    2: weOfferImage,
-    3: weOfferImage,
-    4: weOfferImage,
-    5: weOfferImage,
-    6: weOfferImage,
-    7: weOfferImage,
+    1: weOfferImage1,
+    2: weOfferImage2,
+    3: weOfferImage3,
+    4: weOfferImage4,
+    5: weOfferImage5,
+    6: weOfferImage6,
+    7: weOfferImage7,
   };
 
   useEffect(() => {
@@ -231,7 +238,7 @@ export default function WhatWeOffer({ ribbon, backImg }) {
           <div
             className="relative col-span-1 sm:col-span-2 h-[600px] px-4 pt-6 pb-60 sm:px-8 sm:py-12 rounded-2xl sm:rounded-[40px]"
             style={{
-              backgroundColor: backImg ? "rgba(127, 0, 255, 0.13)" : "#fff6e9",
+              backgroun: backImg ? "linear-gradient(90deg, rgba(255, 127, 62, 0.1) 0%, rgba(127, 0, 255, 0.1) 95.18%)" : "#fff6e9",
             }}
           >
             <Swiper
