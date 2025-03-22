@@ -15,6 +15,8 @@ import "@/styles/globals.css";
 import { Autoplay, Parallax, Pagination, Navigation } from "swiper/modules";
 import weOfferImage from "@/assets/images/we_offer.png";
 import RibbonImage from "@/assets/images/ribbon_clip.png";
+import RibbonImage1 from "@/assets/images/ribbon_clip_left_desktop.png";
+import RibbonImage2 from "@/assets/images/ribbon_clip_right_desktop.png";
 import BackgroundImg from "@/assets/images/curriculum_background.png";
 import { whatOfferList } from "@/constants/data";
 import ForwardArrowIcon, { ChevronIcon } from "@/assets/icons/ForwardArrowIcon";
@@ -108,13 +110,12 @@ export default function WhatWeOffer({ ribbon, backImg }) {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if(entry.intersectionRatio === 1){
+        if (entry.intersectionRatio === 1) {
           setIsFullyVisible(true);
-        }
-        else if(entry.intersectionRatio === 0){
+        } else if (entry.intersectionRatio === 0) {
           setIsFullyVisible(false);
         }
-        
+
         if (isFullyVisible && swiperRef.current?.swiper) {
           window.removeEventListener("wheel", handleScroll);
           setIsComponentInView(true);
@@ -122,8 +123,7 @@ export default function WhatWeOffer({ ribbon, backImg }) {
           swiperRef.current.swiper.allowSlideNext = true;
           swiperRef.current.swiper.allowSlidePrev = true;
           window.addEventListener("wheel", handleScroll, { passive: false });
-        }
-        else if (entry.intersectionRatio === 0 && swiperRef.current?.swiper) {
+        } else if (entry.intersectionRatio === 0 && swiperRef.current?.swiper) {
           swiperRef.current.swiper.allowTouchMove = false;
           swiperRef.current.swiper.allowSlideNext = false;
           swiperRef.current.swiper.allowSlidePrev = false;
@@ -160,15 +160,35 @@ export default function WhatWeOffer({ ribbon, backImg }) {
   };
 
   return (
-    <div className="relative" style={backImg ? { 
-      backgroundImage: `url(${BackgroundImg.src})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      paddingTop: '100px'
-    } : {}}>
+    <div
+      className="relative"
+      style={
+        backImg
+          ? {
+              backgroundImage: `url(${BackgroundImg.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              paddingTop: "100px",
+            }
+          : {}
+      }
+    >
       {ribbon && (
-        <div className="absolute z-50 top-26 sm:-top-32 h-full w-full">
-          <Image src={RibbonImage} width={"100%"} height={"100%"} />
+        <div className="absolute w-full">
+          <div className="grid grid-cols-4">
+            <div className="relative -left-14 sm:left-0 col-span-3 top-21 sm:-top-42 z-50">
+              <Image src={RibbonImage1} layout="intrinsic" objectFit="cover" />
+            </div>
+            <div>
+              <div className="relative w-auto col-span-1 top-40 sm:top-20 -z-10">
+                <Image
+                  src={RibbonImage2}
+                  layout="intrinsic"
+                  objectFit="contain"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       )}
       <div
@@ -191,7 +211,8 @@ export default function WhatWeOffer({ ribbon, backImg }) {
                 key={i}
                 className="border-t border-gray-300 flex items-center pt-6 cursor-pointer z-100"
                 onClick={(e) => {
-                  if (window.innerWidth >= 640) { // Only for desktop
+                  if (window.innerWidth >= 640) {
+                    // Only for desktop
                     swiperRef.current.swiper.slideTo(i);
                   }
                 }}
@@ -207,9 +228,11 @@ export default function WhatWeOffer({ ribbon, backImg }) {
               </div>
             ))}
           </div>
-          <div 
+          <div
             className="relative col-span-1 sm:col-span-2 h-[600px] px-4 pt-6 pb-60 sm:px-8 sm:py-12 rounded-2xl sm:rounded-[40px]"
-            style={{ backgroundColor: backImg ? 'rgba(127, 0, 255, 0.13)' : '#fff6e9' }}
+            style={{
+              backgroundColor: backImg ? "rgba(127, 0, 255, 0.13)" : "#fff6e9",
+            }}
           >
             <Swiper
               ref={swiperRef}
@@ -289,7 +312,7 @@ export default function WhatWeOffer({ ribbon, backImg }) {
               <button
                 onClick={() => swiperRef.current.swiper.slidePrev()}
                 className={`text-white bg-purple-700 p-2 rounded-sm rotate-180 ${
-                  activeIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''
+                  activeIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
                 }`}
                 disabled={activeIndex === 0}
               >
@@ -298,7 +321,9 @@ export default function WhatWeOffer({ ribbon, backImg }) {
               <button
                 onClick={() => swiperRef.current.swiper.slideNext()}
                 className={`text-white bg-purple-700 p-2 rounded-sm ${
-                  activeIndex === whatOfferList.length - 1 ? 'opacity-50 cursor-not-allowed' : ''
+                  activeIndex === whatOfferList.length - 1
+                    ? "opacity-50 cursor-not-allowed"
+                    : ""
                 }`}
                 disabled={activeIndex === whatOfferList.length - 1}
               >
