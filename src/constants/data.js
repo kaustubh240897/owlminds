@@ -279,3 +279,84 @@ export const testimonialData = [
     desc: "Using OwlMinds has revolutionized how we manage tasks and collaborate as a team. Its intuitive design and powerful features have significantly boosted our productivity and efficiency.",
   },
 ];
+
+export const pricingCardData = [
+  {
+    id: "1",
+    type: "Basic",
+    active: false,
+    desc: "Lorem ipsum dolor sit amet, <br /> consectetur adipiscing elit. Curabitur",
+    correctPrice: "₹12000",
+    inCorrectPrice: "₹16000",
+    priceItems: [
+      {
+        id: "1",
+        title: "8 classes ",
+      },
+      {
+        id: "1",
+        title: "Lorem ipsum ",
+      },
+      {
+        id: "1",
+        title: "Lorem ipsum ",
+      },
+      {
+        id: "1",
+        title: "Lorem ipsum ",
+      },
+    ],
+  },
+  {
+    id: "2",
+    type: "Premium",
+    active: true,
+    desc: "Lorem ipsum dolor sit amet, <br /> consectetur adipiscing elit. Curabitur",
+    correctPrice: "₹12000",
+    inCorrectPrice: "₹16000",
+    priceItems: [
+      {
+        id: "1",
+        title: "32 classes ",
+      },
+      {
+        id: "1",
+        title: "Lorem ipsum ",
+      },
+      {
+        id: "1",
+        title: "Lorem ipsum ",
+      },
+      {
+        id: "1",
+        title: "Lorem ipsum ",
+      },
+    ],
+  },
+  {
+    id: "1",
+    type: "Standard",
+    active: false,
+    desc: "Lorem ipsum dolor sit amet, <br /> consectetur adipiscing elit. Curabitur",
+    correctPrice: "₹12000",
+    inCorrectPrice: "₹16000",
+    priceItems: [
+      {
+        id: "1",
+        title: "64 classes ",
+      },
+      {
+        id: "1",
+        title: "Lorem ipsum ",
+      },
+      {
+        id: "1",
+        title: "Lorem ipsum ",
+      },
+      {
+        id: "1",
+        title: "Lorem ipsum ",
+      },
+    ],
+  },
+];
