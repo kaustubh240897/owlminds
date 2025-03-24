@@ -63,7 +63,7 @@ export const pointersChildGradeData = [
   {
     id: "2",
     icon: "",
-    value: "1:1 Classes Designed to Unlock Your Child’s Potential",
+    value: "1:1 Classes Designed to Unlock Your Child's Potential",
   },
   {
     id: "3",
@@ -78,7 +78,7 @@ export const pointersChildGradeData = [
   {
     id: "5",
     icon: "",
-    value: "Classes That Fit Your Child’s Schedule",
+    value: "Classes That Fit Your Child's Schedule",
   },
   {
     id: "6",
@@ -217,7 +217,7 @@ export const whatOfferList = [
   },
   {
     id: "1",
-    title: "Practising",
+    title: "Practicing",
     imageDesc:
       "Leadership is about action. This module helps students apply leadership skills in real-life scenarios, focusing on teamwork, communication, and emotional intelligence through interactive exercises.",
   },
@@ -243,11 +243,11 @@ export const whatOfferList = [
     id: "5",
     title: "Digital Life Basics",
     imageDesc:
-      "In today’s world, digital literacy is essential. Students learn internet safety, AI, and responsible online communication, ensuring they become tech-savvy and ethical digital citizens.",
+      "In today's world, digital literacy is essential. Students learn internet safety, AI, and responsible online communication, ensuring they become tech-savvy and ethical digital citizens.",
   },
   {
     id: "6",
-    title: "Financial Literacy ",
+    title: "Financial Literacy ",
     imageDesc:
       "Financial responsibility is key to leadership. This module covers money management, budgeting, investment, and taxes, helping students make smart financial decisions for the future.",
   },
@@ -360,3 +360,77 @@ export const pricingCardData = [
     ],
   },
 ];
+export const courseStructure = [
+  {
+    moduleTitle: "Module 1: Fundamentals",
+    weeks: [
+      "Understanding leadership qualities",
+      "Developing critical thinking and self-confidence",
+      "Learning problem-solving and ethical decision-making",
+      "Capstone – Leadership reflection activity"
+    ]
+  },
+  {
+    moduleTitle: "Module 2: practicing",
+    weeks: [
+      "Applying leadership through teamwork",
+      "Developing emotional intelligence in real-life situations",
+      "Learning effective communication and problem-solving",
+      "Capstone – Real-world leadership challenge"
+    ]
+  },
+  {
+    moduleTitle: "Module 3: Applying",
+    weeks: [
+      "Leadership in action – practical application",
+      "Developing resilience and adaptability",
+      "Real-time problem-solving and decision-making",
+      "Capstone – Leadership case study"
+    ]
+  },
+  {
+    moduleTitle: "Module 4: Kindness in Leadership",
+    weeks: [
+      "Practicing empathy and emotional intelligence",
+      "Developing gratitude and responsibility",
+      "Leading with compassion and inclusivity",
+      "Capstone – Ethical leadership workshop"
+    ]
+  },
+  {
+    moduleTitle: "Module 5: Growing Together in Leadership",
+    weeks: [
+      "Building trust and teamwork",
+      "Conflict resolution and collaboration strategies",
+      "Understanding team-based decision-making",
+      "Capstone – Team-building project"
+    ]
+  },
+  {
+    moduleTitle: "Module 6: Digital Life Basics",
+    weeks: [
+      "Understanding digital literacy and online safety",
+      "Exploring AI and technology-driven communication",
+      "Practicing responsible social media usage",
+      "Capstone – Digital citizenship project"
+    ]
+  },
+  {
+    moduleTitle: "Module 7: Financial Literacy",
+    weeks: [
+      "Basics of money management and budgeting",
+      "Understanding investments, profit & loss",
+      "Smart financial decision-making and taxes",
+      "Capstone – Financial planning simulation"
+    ]
+  },
+  {
+    moduleTitle: "Module 8: Entrepreneurial Attitude",
+    weeks: [
+      "Business ideation and strategic planning",
+      "Marketing, sales, and financial execution",
+      "Developing an entrepreneurial mindset",
+      "Capstone – Business pitch competition"
+    ]
+  }
+]; 

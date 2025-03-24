@@ -25,7 +25,7 @@ import RibbonImage from "@/assets/images/ribbon_clip.png";
 import RibbonImage1 from "@/assets/images/ribbon_clip_left_desktop.png";
 import RibbonImage2 from "@/assets/images/ribbon_clip_right_desktop.png";
 import BackgroundImg from "@/assets/images/curriculum_background1.png";
-import { whatOfferList } from "@/constants/data";
+import { whatOfferList, courseStructure } from "@/constants/data";
 import ForwardArrowIcon, { ChevronIcon } from "@/assets/icons/ForwardArrowIcon";
 
 export default function WhatWeOffer({ ribbon, backImg }) {
@@ -36,6 +36,7 @@ export default function WhatWeOffer({ ribbon, backImg }) {
   const swiperRef = useRef(null);
   const componentRef = useRef(null);
   const [isFullyVisible, setIsFullyVisible] = useState(false);
+  const isScrolling = useRef(false);
   let slideTimeout = null;
 
   const imageMapping = {
@@ -50,7 +51,9 @@ export default function WhatWeOffer({ ribbon, backImg }) {
   };
 
   useEffect(() => {
-    let isScrolling = false;
+    // Only run this effect on desktop screens
+    if (window.innerWidth < 640) return;
+
     let lastScrollTime = Date.now();
     const scrollDebounceTime = 400;
     const scrollAmount = 20;
@@ -59,8 +62,7 @@ export default function WhatWeOffer({ ribbon, backImg }) {
     const handleScroll = (e) => {
       const now = Date.now();
       if (
-        window.innerWidth < 640 ||
-        isScrolling ||
+        isScrolling.current ||
         now - lastScrollTime < scrollDebounceTime ||
         !swiperRef.current?.swiper
       )
@@ -68,12 +70,12 @@ export default function WhatWeOffer({ ribbon, backImg }) {
 
       if (isComponentInView) {
         const delta = Math.sign(e.deltaY);
-        isScrolling = true;
+        isScrolling.current = true;
         lastScrollTime = now;
 
         // Scroll up
         if (delta < 0) {
-          if (activeIndex > 0) {
+          if (activeIndex >= 0) {
             e.preventDefault();
             window.scrollBy({
               top: -scrollAmount,
@@ -110,7 +112,7 @@ export default function WhatWeOffer({ ribbon, backImg }) {
         }
 
         setTimeout(() => {
-          isScrolling = false;
+          isScrolling.current = false;
         }, scrollDebounceTime);
       }
     };
@@ -175,7 +177,7 @@ export default function WhatWeOffer({ ribbon, backImg }) {
               backgroundImage: `url(${BackgroundImg.src})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
-              paddingTop: "100px",
+              paddingTop: "30px",
             }
           : {}
       }
@@ -221,6 +223,8 @@ export default function WhatWeOffer({ ribbon, backImg }) {
                   if (window.innerWidth >= 640) {
                     // Only for desktop
                     swiperRef.current.swiper.slideTo(i);
+                    setActiveIndex(i);
+                    setBackgroundImage(imageMapping[i] || weOfferImage);
                   }
                 }}
               >
@@ -236,13 +240,14 @@ export default function WhatWeOffer({ ribbon, backImg }) {
             ))}
           </div>
           <div
-            className="relative col-span-1 sm:col-span-2 h-[600px] px-4 pt-6 pb-60 sm:px-8 sm:py-12 rounded-2xl sm:rounded-[40px]"
+            className={`relative col-span-1 sm:col-span-2 px-4 pt-6  sm:px-8 sm:py-12 rounded-2xl sm:rounded-[40px] ${backImg ? 'h-[600px] sm:h-[600px] pb-60 sm:pb-[180px]' : 'pb-60 h-[600px]'}`}
             style={{
-              backgroun: backImg ? "linear-gradient(90deg, rgba(255, 127, 62, 0.1) 0%, rgba(127, 0, 255, 0.1) 95.18%)" : "#fff6e9",
+              background: backImg ? "linear-gradient(90deg, rgba(255, 127, 62, 0.2) 0%, rgba(127, 0, 255, 0.2) 95.18%); " : "#fff6e9",
             }}
           >
             <Swiper
               ref={swiperRef}
+              // onSwiper={handleSwiperInit}
               style={{
                 "--swiper-navigation-color": "#fff",
                 "--swiper-pagination-color": "#fff",
@@ -256,7 +261,7 @@ export default function WhatWeOffer({ ribbon, backImg }) {
                 clickable: false,
               }}
               autoplay={{
-                delay: 50000,
+                delay: 200,
                 disableOnInteraction: false,
               }}
               navigation={false}
@@ -282,7 +287,7 @@ export default function WhatWeOffer({ ribbon, backImg }) {
               {/* Slides */}
               {whatOfferList.map((slide, i) => (
                 <SwiperSlide key={i} className="relative">
-                  <div className="absolute hidden sm:block bottom-12 left-12 right-12 text-white">
+                  <div className={`absolute ${!backImg ? 'hidden sm:block' : 'hidden'} bottom-12 left-12 right-12 text-white`}>
                     <div
                       className="text-4xl font-medium pb-4"
                       data-swiper-parallax="-300"
@@ -315,7 +320,7 @@ export default function WhatWeOffer({ ribbon, backImg }) {
               </div>
             )}
 
-            <div className="absolute w-full left-0 right-0 px-2 flex sm:hidden justify-between bottom-30 z-100">
+            <div className="absolute w-full left-0 right-0 px-2 flex sm:hidden justify-between bottom-30 z-1000">
               <button
                 onClick={() => swiperRef.current.swiper.slidePrev()}
                 className={`text-white bg-purple-700 p-2 rounded-sm rotate-180 ${
@@ -326,7 +331,13 @@ export default function WhatWeOffer({ ribbon, backImg }) {
                 <ChevronIcon />
               </button>
               <button
-                onClick={() => swiperRef.current.swiper.slideNext()}
+                onClick={() => {
+                  if (swiperRef.current?.swiper) {
+                    swiperRef.current.swiper.slideNext();
+                  } else {
+                    console.warn('Swiper not ready yet');
+                  }
+                }}
                 className={`text-white bg-purple-700 p-2 rounded-sm ${
                   activeIndex === whatOfferList.length - 1
                     ? "opacity-50 cursor-not-allowed"
@@ -337,6 +348,23 @@ export default function WhatWeOffer({ ribbon, backImg }) {
                 <ChevronIcon />
               </button>
             </div>
+            {backImg && courseStructure[activeIndex] && (
+              <div className="hidden sm:block">
+                <p className="text-black font-semibold text-3xl mx-auto mt-5 ml-2">
+                  {courseStructure[activeIndex].moduleTitle}
+                </p>
+                <div className="grid grid-cols-2 gap-2 mt-5">
+                  {courseStructure[activeIndex].weeks.map((week, index) => (
+                    <div className="flex items-start" key={index}>
+                      <span className="mr-2 text-black">•</span>
+                      <p className="text-black font-medium text-md">
+                        <b>Week {(activeIndex*4) + index + 1}:</b> {week}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -114,7 +114,7 @@ export default function Navbar() {
         <div className="space-y-1 px-2 pt-8 pb-3">
           <a
             href="/curriculum"
-            className={`block rounded-md px-3 py-1 text-xl relative ${
+            className={`block rounded-md px-3 py-1 text-xl sm:text-5xl relative ${
               router.pathname === "/curriculum"
                 ? "font-bold text-black"
                 : "text-black hover:text-purple-700"

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import PriceCard4 from "@/assets/images/Card_4.png";
-import PriceCard5 from "@/assets/images/Card_5.png";
+import PriceCard5 from "@/assets/images/Card_8.png";
 import { pricingCardData } from "@/constants/data";
 
 export default function PricingCard() {
