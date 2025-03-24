@@ -205,7 +205,7 @@ export default function WhatWeOffer({ ribbon, backImg }) {
         className="max-w-3xl md:max-w-4xl lg:max-w-7xl mx-auto mb-24 px-4 sm:px-2"
       >
         {/* TITLE */}
-        <div className="mb-24 sm:mb-8 flex flex-col items-center justify-center sm:block">
+        <div className="mb-16 sm:mb-8 flex flex-col items-center justify-center sm:block">
           <h2 className="text-3xl md:text-5xl font-medium text-black pb-3">
             {backImg ? "Our Curriculum" : "What We Offer"}
           </h2>
@@ -240,7 +240,7 @@ export default function WhatWeOffer({ ribbon, backImg }) {
             ))}
           </div>
           <div
-            className={`relative col-span-1 sm:col-span-2 px-4 pt-6  sm:px-8 sm:py-12 rounded-2xl sm:rounded-[40px] ${backImg ? 'h-[600px] sm:h-[600px] pb-60 sm:pb-[180px]' : 'pb-60 h-[600px]'}`}
+            className={`relative col-span-1 sm:col-span-2 px-4 pt-6  sm:px-8 sm:py-12 rounded-2xl sm:rounded-[40px] ${backImg ? 'h-[750px] sm:h-[600px] pb-92 sm:pb-[180px]' : 'pb-60 h-[600px]'}`}
             style={{
               background: backImg ? "linear-gradient(90deg, rgba(255, 127, 62, 0.2) 0%, rgba(127, 0, 255, 0.2) 95.18%); " : "#fff6e9",
             }}
@@ -261,8 +261,8 @@ export default function WhatWeOffer({ ribbon, backImg }) {
                 clickable: false,
               }}
               autoplay={{
-                delay: 200,
-                disableOnInteraction: false,
+                delay: 500,
+                disableOnInteraction: true,
               }}
               navigation={false}
               modules={[Autoplay, Parallax, Pagination, Navigation]}
@@ -304,20 +304,37 @@ export default function WhatWeOffer({ ribbon, backImg }) {
               ))}
             </Swiper>
 
-            {whatOfferList[activeIndex] && (
-              <div className="block sm:hidden absolute bottom-8 right-4 left-4 mx-6 text-center text-black">
-                <div
-                  className="text-2xl font-medium pb-2"
-                  data-swiper-parallax="-300"
-                >
-                  {whatOfferList[activeIndex].title}
-                </div>
-                <div className="" data-swiper-parallax="-100">
-                  <p className="text-base font-sans leading-6">
-                    {whatOfferList[activeIndex].imageDesc}
+            {backImg ? (
+              courseStructure[activeIndex] && (
+                <div className="block sm:hidden absolute bottom-8 right-4 left-6 mx-6 text-left text-black">
+                  <p className="text-black font-semibold text-3xl mx-auto mt-5 ml-2" data-swiper-parallax="-300">
+                    {courseStructure[activeIndex].moduleTitle}
                   </p>
+                  <div className="grid grid-cols-1 gap-2 mt-5 justify-items-center">
+                    {courseStructure[activeIndex].weeks.map((week, index) => (
+                      <div className="flex items-start w-full max-w-xs" key={index}>
+                        <span className="mr-2 text-black">•</span>
+                        <p className="text-black font-medium text-md">
+                          <b>Week {(activeIndex * 4) + index + 1}:</b> {week}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )
+            ) : (
+              whatOfferList[activeIndex] && (
+                <div className="block sm:hidden absolute bottom-8 right-4 left-4 mx-6 text-center text-black">
+                  <div className="text-2xl font-medium pb-2" data-swiper-parallax="-300">
+                    {whatOfferList[activeIndex].title}
+                  </div>
+                  <div className="" data-swiper-parallax="-100">
+                    <p className="text-base font-sans leading-6">
+                      {whatOfferList[activeIndex].imageDesc}
+                    </p>
+                  </div>
+                </div>
+              )
             )}
 
             <div className="absolute w-full left-0 right-0 px-2 flex sm:hidden justify-between bottom-30 z-1000">
