@@ -60,7 +60,7 @@ export default function HeroSection() {
 
             <div>
               <button className="absolute rounded-md -bottom-2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#7f00ff] px-3 py-1 text-xs text-white">
-                Book a FREE Trail Class
+                Book a FREE Trial Class
               </button>
             </div>
           </div>

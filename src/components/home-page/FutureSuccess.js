@@ -40,7 +40,7 @@ export default function FutureSuccess() {
           <div className="my-4 sm:my-8">
             <a href="/register" className="block">
               <button className="bg-[#7f00ff] text-white flex items-center mx-auto sm:mx-0 px-8 py-3 rounded-xl text-base sm:text-xl cursor-pointer">
-                <p className="pr-2">Book a FREE Trail Class</p>
+                <p className="pr-2">Book a FREE Trial Class</p>
                 <ForwardArrowIcon color={"#fff"} height={14} width={24} />
               </button>
             </a>

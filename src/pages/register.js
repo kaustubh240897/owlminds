@@ -91,7 +91,7 @@ export default function Home() {
       title={
         <span>
           Book a <span style={{ color: "rgba(127, 0, 255, 1)" }}>Free</span>{" "}
-          Trail Class Now!
+          Trial Class Now!
         </span>
       }
       pointersData={pointersChildGradeData}

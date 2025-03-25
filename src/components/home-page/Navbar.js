@@ -51,7 +51,7 @@ export default function Navbar() {
                 <button className="bg-[#7F00FF] cursor-pointer flex items-center justify-center px-10 sm:px-24 py-4 rounded-3xl">
                   <CalendarIcon width={12} height={16} />
                   <p className="text-white pl-2 pt-[2px] text-xl font-semibold">
-                    Book a FREE Trail Class
+                    Book a FREE Trial Class
                   </p>
                 </button>
               </Link>
@@ -134,7 +134,7 @@ export default function Navbar() {
               <button className="bg-[#7F00FF] cursor-pointer w-full flex items-center justify-center px-10 py-3 rounded-xl">
                 <CalendarIcon width={12} height={16} />
                 <p className="text-white pl-2 pt-[2px]">
-                  Book a Free Trail Classes
+                  Book a Free Trial Classes
                 </p>
               </button>
             </Link>
