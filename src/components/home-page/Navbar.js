@@ -2,7 +2,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import CalendarIcon from "@/assets/icons/CalenderIcon";
-import { LogoNav } from "@/assets/icons/Logo";
+import LogoNav  from "@/assets/images/owlmindsLogoNew.png";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,20 @@ export default function Navbar() {
           <div className="flex flex-1 items-center justify-start sm:items-stretch sm:justify-between">
             <div className="flex shrink-0 items-center pl-4 sm:pl-0">
               <Link href="/">
-                <LogoNav width={150} height={70} />
+                <Image
+                  src={LogoNav}
+                  alt="Logo"
+                  width={200}
+                  height={140}
+                  className="block sm:hidden"
+                />
+                <Image
+                  src={LogoNav}
+                  alt="Logo"
+                  width={300}
+                  height={150}
+                  className="sm:block hidden"
+                />
               </Link>
             </div>
             <div className="hidden sm:ml-6 sm:block sm:my-auto">
